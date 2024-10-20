@@ -5,8 +5,14 @@ const router = express.Router({ mergeParams: true });
 
 router.post("/" , async (req,res)=>{
     try {
-        const newbook = req.body;
+        const newbook = {
+            title: req.body.title,
+            author: req.body.author,
+            publishYear: req.body.publishYear,
+        };
 
+        // console.log(req.body);
+        
         if(!newbook.title || !newbook.author || !newbook.publishYear){
             res.status(400).send("<h1>please fill all the fields</h1>");
         }

@@ -46,7 +46,7 @@ function Home() {
           {
             books.map((book)=>{
               return(
-                <div className=' bg-sky-100 rounded-lg shadow-sm p-4'>
+                <div className=' bg-sky-50 rounded-lg shadow-sm p-4'>
                   <h1 className='text-xl capitalize py-2'>{book.title}</h1>
                   <h2 className=' text-gray-500 text-lg capitalize py-1'>Author: {book.author}</h2>
                   <h3 className=' text-gray-500 text-lg capitalize py-1'>Publication year: {book.publishYear}</h3>
