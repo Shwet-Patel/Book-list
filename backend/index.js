@@ -1,5 +1,5 @@
 import express from "express";
-import { PORT , mongoURL } from "./config.js";
+import dotenv from 'dotenv';
 import mongoose from "mongoose";
 //import bodyParser from "body-parser";
 import cors from 'cors';
@@ -7,6 +7,10 @@ import cors from 'cors';
 import booksRoute from "./routes/bookroutes.js";
 
 const app = express();
+dotenv.config();
+
+const PORT = process.env.PORT;
+const mongoURL = process.env.MONGOURL;
 
 //middlewares
 app.use(cors());
