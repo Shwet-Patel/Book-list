@@ -3,6 +3,7 @@ import axios from 'axios';
 import Spinner from '../components/Spinner';
 import { Link } from 'react-router-dom';
 import '../index.css';
+import {BaseURL} from '../BaseURL';
 
 import { MdOutlineAddBox , MdOutlineDelete} from 'react-icons/md';
 import {BiInfoCircle} from 'react-icons/bi';
@@ -14,7 +15,7 @@ function Home() {
 
   useEffect(()=>{
     setLoading(true);
-    axios.get('http://localhost:3000/books')
+    axios.get( BaseURL + '/books')
     .then((response)=>{
       console.log(response);
       setLoading(false);

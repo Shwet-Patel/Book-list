@@ -1,0 +1,1 @@
+export const BaseURL = "https://book-store-five-gilt.vercel.app";

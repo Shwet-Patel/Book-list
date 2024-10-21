@@ -3,6 +3,7 @@ import { useNavigate , useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '..//components/Spinner';
 import axios from 'axios';
+import { BaseURL } from '../BaseURL';
 
 function DeleteBook() {
   const id = useParams().id;
@@ -12,7 +13,7 @@ function DeleteBook() {
   
   const handleDelete = ()=>{
     setLoading(true);
-    axios.delete(`http://localhost:3000/books/${id}`)
+    axios.delete( BaseURL + `/books/${id}`)
     .then((response)=>{
       console.log(response);
       setLoading(false);

@@ -3,6 +3,7 @@ import { useNavigate , useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '..//components/Spinner';
 import axios from 'axios';
+import { BaseURL } from '../BaseURL';
 
 function EditBook() {
   const id = useParams().id;
@@ -15,7 +16,7 @@ function EditBook() {
 
   useEffect(()=>{
     setLoading(true);
-    axios.get(`http://localhost:3000/books/${id}`)
+    axios.get( BaseURL + `/books/${id}`)
     .then((response)=>{
       console.log(response);
       setLoading(false);
